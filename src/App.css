@@ -1,0 +1,258 @@
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+* {
+  font-family: "Lora", serif;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+}
+
+#root {
+  /* scroll-snap-type: y mandatory; */
+  background: red;
+  height: 100%;
+}
+
+.centered {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.centered-65 {
+  margin: 0 auto;
+  width: 65%;
+}
+
+.page {
+  /* scroll-snap-align: start; */
+  min-height: 100%;
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.page.page-expand-vertical {
+  /* scroll-snap-align: start; */
+  /* height: auto;
+  position: relative;
+  min-height: 100%; */
+}
+
+#madlib {
+  line-height: 2.5em;
+}
+
+#madlib-container > * {
+  font-size: 1.2em;
+}
+
+.form-divider {
+  height: 100px;
+}
+
+.title {
+  font-size: 3em !important;
+  /* line-height: 2em; */
+  color: #111;
+  font-style: italic;
+  margin: 0 auto;
+}
+
+.form-input {
+  font-size: 1em;
+  color: #000;
+
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px dashed;
+  border-color: #fff;
+  background-color: transparent;
+  caret-color: #fff;
+
+  line-height: 2em;
+}
+
+.form-input:focus {
+  border-bottom: 2px solid;
+  border-color: #fff;
+}
+
+.form-input-placeholder {
+  min-width: 100px;
+  display: inline-block;
+}
+
+.madlib-arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: 3vmin;
+  height: 3vmin;
+  background: transparent;
+  border-top: 1vmin solid white;
+  border-right: 1vmin solid white;
+  box-shadow: 0 0 0 lightgray;
+  transition: all 200ms ease;
+}
+
+#madlib-arrow-left {
+  left: 30px;
+  /* left: -40px; */
+  transform: translate3d(0, -50%, 0) rotate(-135deg);
+}
+
+#madlib-arrow-right {
+  right: 30px;
+  /* right: -40px; */
+  transform: translate3d(0, -50%, 0) rotate(45deg);
+}
+
+.madlib-arrow:hover {
+  border-color: #ccc;
+  box-shadow: 0.5vmin -0.5vmin 0 white;
+}
+
+.madlib-arrow:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -60%) rotate(45deg);
+  width: 200%;
+  height: 200%;
+}
+
+.madlib-from-to {
+  margin-top: 40px;
+  line-height: 2em;
+}
+
+.form-label {
+  width: 160px;
+  text-align: right;
+  padding-right: 10px;
+  display: inline-block;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.button {
+  height: fit-content;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 2px solid #fff;
+  background-color: transparent;
+  font-size: 1em;
+}
+
+.disabled,
+:disabled {
+  cursor: default !important;
+  border: 2px dashed #fff !important;
+}
+
+.checkbox-container {
+  line-height: 3em;
+  padding-left: 8.4em;
+}
+
+.action-options {
+  display: flex;
+  flex-direction: row;
+}
+
+.action-option-container {
+  flex: 1;
+}
+
+.action-option {
+  cursor: pointer;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid #fff;
+  height: 400px;
+}
+
+.action-option:hover,
+.button:hover:not(:disabled) {
+  border: 2px dashed #fff;
+}
+
+.InputElement {
+  border-bottom: 3px dashed #fff;
+}
+
+@media only screen and (max-width: 600px) {
+  .centered {
+    width: auto;
+    padding: 0 30px;
+  }
+
+  .button-container {
+    padding: 50px 0 20px;
+  }
+
+  span#madlib-title {
+    padding: 0 30px 10px;
+    display: block;
+  }
+
+  .madlib-arrow {
+    top: 10%;
+    width: 5vmin;
+    height: 5vmin;
+  }
+
+  #madlib-arrow-left {
+    left: 20px;
+  }
+
+  #madlib-arrow-right {
+    right: 20px;
+  }
+
+  .action-options {
+    flex-direction: column;
+  }
+
+  .action-option {
+    height: auto;
+  }
+
+  .form-label {
+    text-align: left;
+  }
+
+  .centered-65 {
+    width: 85%;
+  }
+
+  .checkbox-container {
+    padding-left: 0;
+  }
+
+  .user-info-input {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .checkbox-container .form-label {
+    width: auto;
+  }
+}
